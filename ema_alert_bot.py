@@ -10,7 +10,7 @@ def send_alert(message):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     requests.post(url, data={"chat_id": CHAT_ID, "text": message})
 
-def fetch_data(symbol="BTCUSDT", interval="1m", limit=100):
+def fetch_data(symbol="BTCUSDT", interval="15m", limit=100):
     url = f"https://api.binance.com/api/v3/klines?symbol={symbol}&interval={interval}&limit={limit}"
     data = requests.get(url).json()
     
